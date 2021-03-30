@@ -1,8 +1,6 @@
 const Champion = require('../models/Champion');
 
 exports.createChampion = (req, res) => {
-  // const champItem = JSON.parse(req.body);
-  // delete champItem._id;
   console.log(req.body.champ);
   const champ = new Champion({
     ...req.body.champ,
