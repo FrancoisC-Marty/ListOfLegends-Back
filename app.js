@@ -31,7 +31,9 @@ DB.connect();
 //   callback(null, corsOptions)
 // }
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://listoflegends.surge.sh/',
+}));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
