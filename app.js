@@ -6,7 +6,7 @@ const championRoutes = require('./routes/champion');
 const DB = require('./DB/connect');
 
 const app = express();
-const allowlist = ['https://www.listoflegends.surge.sh', 'http://localhost:3000'];
+const allowlist = ['https://listoflegends.surge.sh/', 'http://localhost:3000'];
 
 DB.connect();
 
