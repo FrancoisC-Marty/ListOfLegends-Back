@@ -9,7 +9,7 @@ const app = express();
 
 DB.connect();
 
-const allowlist = ['https://www.listoflegends.surge.sh', 'http://localhost:3000'];
+const allowlist = ['https://listoflegends.surge.sh', 'http://localhost:3000'];
 
 /**
  * This function allows or not cors depending on the allowlist established
