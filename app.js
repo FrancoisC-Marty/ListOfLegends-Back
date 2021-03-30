@@ -6,10 +6,10 @@ const championRoutes = require('./routes/champion');
 const DB = require('./DB/connect');
 
 const app = express();
+const allowlist = ['https://www.listoflegends.surge.sh', 'http://localhost:3000'];
 
 DB.connect();
 
-const allowlist = ['http://localhost:3000', 'https://listoflegends.surge.sh/'];
 /**
  * This function allows or not cors depending on the allowlist established
  * @param {*} req 
