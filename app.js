@@ -31,7 +31,7 @@ DB.connect();
 //   callback(null, corsOptions)
 // }
 
-app.use(cors({ origin : true }));
+app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
