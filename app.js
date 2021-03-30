@@ -6,32 +6,32 @@ const championRoutes = require('./routes/champion');
 const DB = require('./DB/connect');
 
 const app = express();
-const allowlist = ['https://listoflegends.surge.sh/', 'http://localhost:3000'];
 
 DB.connect();
 
-/**
- * This function allows or not cors depending on the allowlist established
- * @param {*} req 
- * @param {*} callback 
- */
-const corsOptionsDelegate = (req, callback) => {
-  let corsOptions;
+// const allowlist = ['https://listoflegends.surge.sh/', 'http://localhost:3000'];
+// /**
+//  * This function allows or not cors depending on the allowlist established
+//  * @param {*} req 
+//  * @param {*} callback 
+//  */
+// const corsOptionsDelegate = (req, callback) => {
+//   let corsOptions;
 
-  let isDomainAllowed = allowlist.indexOf(req.header('Origin')) !== -1;
+//   let isDomainAllowed = allowlist.indexOf(req.header('Origin')) !== -1;
 
-  if (isDomainAllowed) {
-      corsOptions = {
-        origin: true,
-        method: 'GET, POST',
-      }
-  } else {
-      corsOptions = { origin: false }
-  }
-  callback(null, corsOptions)
-}
+//   if (isDomainAllowed) {
+//       corsOptions = {
+//         origin: true,
+//         method: 'GET, POST',
+//       }
+//   } else {
+//       corsOptions = { origin: false }
+//   }
+//   callback(null, corsOptions)
+// }
 
-app.use(cors(corsOptionsDelegate));
+app.use(cors({ origin : true }));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
